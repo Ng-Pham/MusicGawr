@@ -1,0 +1,67 @@
+﻿
+<div class="modal fade" id="login">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+            <div class="modal-body">
+                <div class="register_img">
+                    <img src="~/Images/register_img.png" class="img-responsive" alt="">
+                </div>
+                <div class="register_form login-form">
+                    <form action="" method="POST" role="form" name="myFormLogin">
+                        <div class="heading-slider">
+                            <h1>Login <span>/</span> sign in</h1>
+                        </div>
+                        <div class="form-group">
+                            <input type="email" class="form-control" name="email" ng-model="email" required
+                                   placeholder="Enter Your Email">
+                            <span><i class="far fa-envelope"></i></span>
+
+                            <div ng-if="myFormLogin.email.$dirty" class="err">
+                                <div ng-if="myFormLogin.email.$error.required">
+                                    <span class="glyphicon glyphicon-remove"></span> Email không được để trống!
+                                </div>
+                                <div ng-if="myFormLogin.email.$error.email">
+                                    <span class="glyphicon glyphicon-remove"></span> Email không đúng định dạng!
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <input type="password" class="form-control" name="pass" placeholder="Enter Password"
+                                   ng-model="password" required minlength="8">
+                            <span><i class="fas fa-lock"></i></span>
+                            <div ng-if="myFormLogin.pass.$dirty" class="err">
+                                <div ng-if="myFormLogin.pass.$error.required">
+                                    <span class="glyphicon glyphicon-remove"></span> Password không được để trống!
+                                </div>
+                                <div ng-if="myFormLogin.pass.$error.minlength">
+                                    <span class="glyphicon glyphicon-remove"></span> Password ít nhất 8 ký tự!
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="checkbox">
+                                <label>
+                                    <input type="checkbox" value="">
+                                    Keep me signed in
+                                </label>
+                            </div>
+                        </div>
+                        <div ng-if="mess">
+                            <p style="color: white">{{mess}}</p>
+                        </div>
+                        <a type="submit" ng-disabled="myFormLogin.$invalid" class="btn btn btn-submit"
+                           ng-click="login()">Login now</a>
+                        <div class="popup-forgot">
+                            <a href="">
+                                Forgot Password ?
+                            </a>
+                        </div>
+                        <p>Don't Have An Account? <a data-toggle="modal" href='#login'>register here</a></p>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

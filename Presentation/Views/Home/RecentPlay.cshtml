@@ -1,0 +1,52 @@
+﻿<div class="heading-slider">
+    <h1>Recently Play</h1>
+    <span>
+        <a href="">View more</a>
+    </span>
+</div>
+<data-owl-carousel class="owl-carousel" data-options="{loop:true}">
+    <div owl-carousel-item="" ng-repeat="song in songs | limitTo:5:0" class="block-slide">
+        <div class="img-slide">
+            <img ng-src="~/Images/rct-slider/{{song.Image}}" alt="">
+            <div class="main_overlay">
+                <div class="box_overlay"></div>
+                <div class="more_icon" ng-click="toggle = !toggle">
+                    <img src="~/Images/svg/more1.svg" alt="">
+                </div>
+                <ul class="more-option" ng-class="{'xh-block-more' : toggle}">
+                    <li>
+                        <a href="">
+                            <span><i class="far fa-heart"></i></span>
+                            Add To Favourites
+                        </a>
+                    </li>
+                    <li>
+                        <a href="">
+                            <span><i class="fas fa-plus"></i></span>
+                            Add To Queue
+                        </a>
+                    </li>
+                    <li>
+                        <a href="">
+                            <span><i class="fas fa-list"></i></span>
+                            Add To Playlist
+                        </a>
+                    </li>
+                    <li>
+                        <a href="">
+                            <span><i class="fas fa-share-alt"></i></span>
+                            share
+                        </a>
+                    </li>
+                </ul>
+                <div class="play_icon">
+                    <img src="~/Images/svg/play.svg" alt="">
+                </div>
+            </div>
+        </div>
+        <div class="text-slide">
+            <h3><b>{{song.NameSong}}</b></h3>
+            <p>{{song.NameArtist}}</p>
+        </div>
+    </div>
+</data-owl-carousel>

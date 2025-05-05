@@ -1,0 +1,29 @@
+﻿<div class="heading-slider">
+    <h1>new releases</h1>
+    <span>
+        <a href="">View more</a>
+    </span>
+</div>
+<div class="swiper-container">
+    <data-owl-carousel class="owl-carousel" data-options="{loop:true}">
+        <div owl-carousel-item="" ng-repeat="n_releases in new_releases | limitTo:5:0" class="swiper-slide">
+            <div class="releases_box">
+                <div class="weeky-right">
+                    <span class="song_time">5:10</span>
+                </div>
+                <div class="w-top-song">
+                    <div class="w-top-song-img">
+                        <img src="~/Images/songs/{{n_releases.Image}}" alt="">
+                        <div class="icon-play">
+                            <img src="~/Images/svg/play.svg" alt="">
+                        </div>
+                    </div>
+                    <div class="w-top-song-name">
+                        <h3><a href="">{{n_releases.NameSong}}</a></h3>
+                        <p>{{n_releases.NameArtists}}</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </data-owl-carousel>
+</div>

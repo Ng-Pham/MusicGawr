@@ -1,0 +1,55 @@
+﻿<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Music</title>
+    <link rel="stylesheet" type="text/css" href="~/Content/owl.carousel.min.css">
+    <link rel="stylesheet" type="text/css" href="~/Content/owl.theme.default.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="~/Content/angular-material.min.css">
+    <link rel="stylesheet" type="text/css" href="~/Content/style.css">
+    <link rel="stylesheet" type="text/css" href="~/Content/all.css">
+
+</head>
+
+<body ng-app="MyApp" ng-controller="MyController">
+    <header>
+        @Html.Action("_PartialHeader", "Home")
+    </header>
+    <div class="banner">
+        @RenderSection("_PartialBanner", required: false)
+    </div>
+    <main>
+        @RenderBody()
+    </main>
+
+    <footer>
+        @Html.Action("_PartialFooter", "Home")
+    </footer>
+
+    <div class="side-menu">
+        @Html.Action("_PartialMenu", "Home")
+    </div>
+    <div class="player_wrapper">
+        @Html.Action("_PartialPlayer", "Home")
+    </div>
+
+    @Html.Action("_PartialRegister", "Home")
+    @Html.Action("_PartialLogin", "Home")
+
+    <script type="text/javascript" src="~/Scripts/jquery.min.js"></script>
+    <script type="text/javascript" src="~/Scripts/owl.carousel.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="~/Scripts/angular.min.js"></script>
+    <script type="text/javascript" src="~/Scripts/style.js"></script>
+    <script type="text/javascript" src="~/Scripts/music.js"></script>
+    <script type="text/javascript" src="~/Scripts/app.js"></script>
+
+</body>
+
+</html>

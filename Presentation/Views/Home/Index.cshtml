@@ -1,0 +1,17 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<div class="recent-play-slider">
+    @Html.Action("RecentPlay", "Home")
+</div>
+<div class="week-top">
+    @Html.Action("WeekTop", "Home")
+</div>
+<div class="new-releases">
+    @Html.Action("Release", "Home")
+</div>
+
+<div class="top_genres">
+    @Html.Action("TopGenres", "Home")
+</div>
