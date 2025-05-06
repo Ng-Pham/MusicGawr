@@ -60,8 +60,7 @@ CREATE TABLE BaiHat (
     TheLoaiId nvarchar(15) NOT NULL,
     PRIMARY KEY (BaiHatId),
     CONSTRAINT FK_BaiHat_TheLoai FOREIGN KEY (TheLoaiId) REFERENCES TheLoai(TheLoaiId),
-    CONSTRAINT FK_BaiHat_Album FOREIGN KEY (TheLoaiId) REFERENCES TheLoai(TheLoaiId),
-    CONSTRAINT FK_BaiHat_Artist FOREIGN KEY (NgheSyId) REFERENCES NgheSy(NgheSyId)
+    CONSTRAINT FK_BaiHat_NgheSy FOREIGN KEY (NgheSyId) REFERENCES NgheSy(NgheSyId)
 );
 
 -- Bảng Playlist --
