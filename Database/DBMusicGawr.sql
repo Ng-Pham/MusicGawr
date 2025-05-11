@@ -103,3 +103,26 @@ CREATE TABLE YeuThich (
     FOREIGN KEY (NguoiDungId) REFERENCES NguoiDung(NguoiDungId),
     FOREIGN KEY (BaiHatId) REFERENCES BaiHat(BaiHatId)
 );
+
+--Bảng lưu mã xác nhận để đặt lại mật khẩu
+CREATE TABLE MaXacNhanDatLaiMatKhau (
+    Id INT IDENTITY(1,1) PRIMARY KEY,
+    NguoiDungId NVARCHAR(15) FOREIGN KEY (NguoiDungId) REFERENCES NguoiDung(NguoiDungId) NOT NULL,
+    MaXacNhan NVARCHAR(50) NOT NULL,
+    ThoiGianHetHan DATETIME NOT NULL,
+    DaSuDung BIT DEFAULT 0,
+);
+
+
+-- Thêm dữ liệu cho admin
+--password admin1234
+INSERT INTO NguoiDung (NguoiDungId, Email, VaiTro, GioiTinh, AnhDaiDien, TrangThaiTK, NgayTao, TenDangNhap, MatKhau)
+VALUES 
+('AD001', 'admin@gmail.com', 'admin', 'Nam', 'ad_default.png', 'HoatDong', GETDATE(), 'admin01', '$2a$11$XpXMqUZbhUKJwjV8c7rEheXRaXuwHn7IeVvWtgy.3LBAVNGnhXAEi');
+
+-- Thêm dữ liệu cho user
+--password user1234
+INSERT INTO NguoiDung (NguoiDungId, Email, VaiTro, GioiTinh, AnhDaiDien, TrangThaiTK, NgayTao, TenDangNhap, MatKhau)
+VALUES 
+('US001', 'user1@gmail.com', 'user', 'Nu', 'us_default.jpg', 'HoatDong', GETDATE(), 'user01', '$2a$11$jVfVCaVNm38h2Y0BTvATQOD6iOQxjh842N9fAAyi8rnrnpx5Q2RJS'),
+('US002', 'user2@gmail.com', 'user', 'Nam', 'us_default.jpg', 'HoatDong', GETDATE(), 'user02', '$2a$11$jVfVCaVNm38h2Y0BTvATQOD6iOQxjh842N9fAAyi8rnrnpx5Q2RJS');

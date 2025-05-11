@@ -15,6 +15,10 @@
     <link rel="stylesheet" type="text/css" href="~/Content/style.css">
     <link rel="stylesheet" type="text/css" href="~/Content/all.css">
 
+    <script type="text/javascript" src="~/Scripts/jquery.min.js"></script>
+    <script src="https://cdn.datatables.net/1.10.15/js/jquery.dataTables.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.5/jquery.validate.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate-unobtrusive/3.2.12/jquery.validate.unobtrusive.min.js"></script>
 </head>
 
 <body ng-app="MyApp" ng-controller="MyController">
@@ -39,17 +43,18 @@
         @Html.Action("_PartialPlayer", "Home")
     </div>
 
-    @Html.Action("_PartialRegister", "Home")
-    @Html.Action("_PartialLogin", "Home")
+    @Html.Action("Register", "Account")
+    @Html.Action("Login", "Account")
+    @Html.Action("ForgotPassword", "Account")
 
-    <script type="text/javascript" src="~/Scripts/jquery.min.js"></script>
     <script type="text/javascript" src="~/Scripts/owl.carousel.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-    <script type="text/javascript" src="~/Scripts/angular.min.js"></script>
     <script type="text/javascript" src="~/Scripts/style.js"></script>
     <script type="text/javascript" src="~/Scripts/music.js"></script>
     <script type="text/javascript" src="~/Scripts/app.js"></script>
 
-</body>
+    @RenderSection("Scripts", required: false)
 
+</body>
 </html>
+

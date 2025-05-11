@@ -1,0 +1,56 @@
+﻿@model Models.ViewModels.RegisterViewModel
+
+<div class="modal fade" id="register">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+            <div class="modal-body">
+                <div class="register_img">
+                    <img src="~/Images/register_img.png" class="img-responsive" alt="">
+                </div>
+                <div class="register_form">
+                    <form action="~/Account/Register" role="form" name="MyFormResgister" id="MyFormRegister">
+                        @Html.AntiForgeryToken()
+                        <div class="heading-slider">
+                            <h1>Register <span>/</span> Sign Up</h1>
+                        </div>
+                        <!-- Thêm div để hiển thị thông báo lỗi -->
+                        <div id="registerError" class="alert alert-danger" style="display: none;"></div>
+
+                        <div class="form-group">
+                            @Html.TextBoxFor(model => model.Username, new { @class = "form-control", @placeholder = "Enter Your Username", @required = "required" })
+                            <span><i class="far fa-user"></i></span>
+                            @Html.ValidationMessageFor(model => model.Username, "", new { @class = "text-danger" })
+                        </div>
+
+                        <div class="form-group">
+                            @Html.TextBoxFor(model => model.Email, new { @class = "form-control", @placeholder = "Enter Your Email", @required = "required", @type = "email" })
+                            <span><i class="far fa-envelope"></i></span>
+                            @Html.ValidationMessageFor(model => model.Email, "", new { @class = "text-danger" })
+                        </div>
+
+                        <div class="form-group">
+                            @Html.PasswordFor(model => model.Password, new { @class = "form-control", @placeholder = "Enter Password", @required = "required" })
+                            <span><i class="fas fa-lock"></i></span>
+                            @Html.ValidationMessageFor(model => model.Password, "", new { @class = "text-danger" })
+                        </div>
+
+                        <div class="form-group">
+                            @Html.PasswordFor(model => model.ConfirmPassword, new { @class = "form-control", @placeholder = "Confirm Password", @required = "required" })
+                            <span><i class="fas fa-lock"></i></span>
+                            @Html.ValidationMessageFor(model => model.ConfirmPassword, "", new { @class = "text-danger" })
+                        </div>
+
+                        <a href="javascript:void(0)" type="submit" class="btn btn-submit register-btn" id="registerBtn">Register Now</a>
+
+                        <p>
+                            Already Have An Account?
+                            <a href="#" data-toggle="modal" data-target="#login" onclick="$('#register').modal('hide');">Login Here</a>
+                        </p>
+                    </form>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
