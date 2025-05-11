@@ -12,14 +12,6 @@ namespace Presentation.Controllers
         {
             return View();
         }
-        public ActionResult _PartialLogin()
-        {
-            return PartialView();
-        }
-        public ActionResult _PartialRegister()
-        {
-            return PartialView();
-        }
         public ActionResult _PartialFooter()
         {
             return PartialView();

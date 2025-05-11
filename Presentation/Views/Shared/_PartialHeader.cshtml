@@ -21,11 +21,29 @@
             </button>
         </div>
         <div class="right-button">
-            <a class="btn-reg" data-toggle="modal" href='#register'><span>Register</span></a>
-            <a class="btn-login" data-toggle="modal" href='#login'><span>Login</span></a>
+            @if (Session["CurrentUser"] != null)
+            {
+                var user = (Models.DTOs.NguoiDungDto)Session["CurrentUser"];
+                <div class="user-menu">
+                    <a href="#" class="user-toggle">
+                        <i class="fas fa-user-circle"></i> @user.Username <i class="fas fa-caret-down ml-1"></i>
+                    </a>
+                    <ul class="user-dropdown">
+                        <li><a href="@Url.Action("Profile", "Account")"><i class="fas fa-user"></i> Thông tin cá nhân</a></li>
+                        <li><a href="@Url.Action("Logout", "Account")"><i class="fas fa-sign-out-alt"></i> Đăng xuất</a></li>
+                    </ul>
+                </div>
+            }
+            else
+            {
+                <a class="btn-reg" data-toggle="modal" href='#register'><span>Register</span></a>
+                <a class="btn-login" data-toggle="modal" href='#login'><span>Login</span></a>
+            }
+
             <span class="close-sidebar">
                 <i class="fas fa-bars"></i>
             </span>
         </div>
+
     </div>
 </div>
